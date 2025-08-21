@@ -1,0 +1,22 @@
+<div data-sly-use.courseModel="com.mysite.core.models.CourseModel"
+     data-sly-test="${courseModel.courseTitle}"
+     style="border: 1px solid #ccc; width: 300px; padding: 16px; margin: 16px;">
+
+    <div class="card-image" data-sly-test="${courseModel.courseImage}">
+        <img src="${courseModel.courseImage}" alt="${courseModel.courseTitle}" style="width:100%;"/>
+    </div>
+
+    <div class="card-content">
+        <h3>${courseModel.courseTitle}</h3>
+        <p>${courseModel.courseDescription}</p>
+    </div>
+
+    <div class="card-modules" data-sly-test="${courseModel.modules}">
+        <hr/>
+        <h4>Course Modules:</h4>
+        <ul data-sly-list.module="${courseModel.modules}">
+            <li>${module.moduleName}</li>
+        </ul>
+    </div>
+
+</div>

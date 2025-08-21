@@ -3,40 +3,45 @@ package com.mysite.core.models;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
+import org.apache.sling.models.annotations.injectorspecific.ChildResource;
 import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 
 import javax.annotation.PostConstruct;
+import java.util.List;
 
-// @Model declares this class as a Sling Model
-// We are adapting it from a Resource (a JCR node)
-// DefaultInjectionStrategy.OPTIONAL means the model won't break if a property is missing
 @Model(adaptables = Resource.class,
         defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
 public class CourseModel {
 
-    // Inject the 'courseTitle' property from the JCR node into this variable
+    // --- Existing Fields ---
     @ValueMapValue
     private String courseTitle;
 
-    // Inject the 'duration' property
     @ValueMapValue
     private String duration;
 
-    // This variable is not injected. We will calculate it in our business logic.
+    @ValueMapValue
+    private String courseDescription; // Assuming you have this from Day 10
+
+    @ValueMapValue
+    private String courseImage; // Assuming you have this from Day 10
+
+    // --- NEW ---
+    // Inject the child nodes from the 'modules' multifield. Sling will find the
+    // child node named 'modules' and adapt its children into a List of Module objects.
+    @ChildResource
+    private List<Module> modules;
+
     private String titleInUpperCase;
 
-    // A @PostConstruct method runs after all the properties have been injected.
-    // It's the perfect place for any business logic.
     @PostConstruct
     protected void init() {
-        // Simple business logic: create an uppercase version of the title
         if (courseTitle != null) {
             titleInUpperCase = courseTitle.toUpperCase();
         }
     }
 
-    // Public "getter" methods to allow other classes (like servlets or HTL)
-    // to read the private data.
+    // --- Existing Getters ---
     public String getCourseTitle() {
         return courseTitle;
     }
@@ -45,7 +50,35 @@ public class CourseModel {
         return duration;
     }
 
+    public String getCourseDescription() {
+        return courseDescription;
+    }
+
+    public String getCourseImage() {
+        return courseImage;
+    }
+
     public String getTitleInUpperCase() {
         return titleInUpperCase;
+    }
+
+    // --- NEW Getter ---
+    public List<Module> getModules() {
+        return modules;
+    }
+
+    // --- NEW Nested Class for a Single Module ---
+    // This is a simple Sling Model whose only job is to represent one
+    // item from our multifield.
+    @Model(adaptables = Resource.class, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
+    public static class Module {
+
+        // Injects the 'moduleName' property from the multifield item node.
+        @ValueMapValue
+        private String moduleName;
+
+        public String getModuleName() {
+            return moduleName;
+        }
     }
 }

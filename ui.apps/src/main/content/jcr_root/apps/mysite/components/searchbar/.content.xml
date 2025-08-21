@@ -3,4 +3,4 @@
           jcr:primaryType="cq:Component"
           jcr:title="My Site Search Bar"
           sling:resourceSuperType="core/wcm/components/search/v2/search"
-          componentGroup="My Site - Structure"/>
+          componentGroup="My Site - Content"/>
