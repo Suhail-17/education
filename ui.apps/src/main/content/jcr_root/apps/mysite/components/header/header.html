@@ -1,0 +1,14 @@
+<sly data-sly-use.component="com.adobe.cq.wcm.core.components.models.Component"></sly>
+
+<header class="site-header" id="${component.id}" style="display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; background: #f8f9fa; border-bottom: 1px solid #dee2e6;">
+
+    <div class="logo-container" data-sly-test="${properties.logoFileRef}">
+        <a href="${properties.logoLinkURL @ extension='html'}">
+            <img class="logo" src="${properties.logoFileRef}" alt="Site Logo" style="height: 40px;"/>
+        </a>
+    </div>
+
+    <sly data-sly-use.navigationTemplate="core/wcm/components/navigation/v2/navigation.html"
+         data-sly-call="${navigationTemplate.navigation @ component=component}"></sly>
+
+</header>

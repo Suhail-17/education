@@ -1,0 +1,21 @@
+{
+  "course": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "mysite/components/course",
+    "courseTitle": "AEM Component Development",
+    "duration": "10 Hours",
+    "courseDescription": "A deep dive into AEM.",
+    "courseImage": "/content/dam/mysite/course.png",
+    "modules": {
+      "jcr:primaryType": "nt:unstructured",
+      "item0": {
+        "jcr:primaryType": "nt:unstructured",
+        "moduleName": "Introduction to AEM"
+      },
+      "item1": {
+        "jcr:primaryType": "nt:unstructured",
+        "moduleName": "Sling Models and Servlets"
+      }
+    }
+  }
+}

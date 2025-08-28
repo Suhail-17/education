@@ -1,0 +1,51 @@
+<div class="registration-form-container">
+    <div class="form-wrapper">
+        <h2>${properties.formTitle || 'Course Registration'}</h2>
+
+        <form id="registration-form" class="registration-form" action="#" method="POST">
+            <div class="form-group">
+                <label for="fullName">Full Name *</label>
+                <input type="text" id="fullName" name="fullName" required="required" class="form-control"/>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address *</label>
+                <input type="email" id="email" name="email" required="required" class="form-control"/>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" class="form-control" pattern="[0-9]{10}" title="Please enter a 10-digit phone number"/>
+            </div>
+
+            <div class="form-group">
+                <label for="course">Select Course *</label>
+                <select id="course" name="course" required="required" class="form-control">
+                    <option value="">-- Select a Course --</option>
+                    <option value="java">Java Programming</option>
+                    <option value="aem">AEM Development</option>
+                    <option value="react">React.js</option>
+                    <option value="cloud">Cloud Computing</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="experience">Previous Experience</label>
+                <textarea id="experience" name="experience" rows="4" class="form-control" maxlength="500"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="startDate">Preferred Start Date *</label>
+                <input type="date" id="startDate" name="startDate" required="required" class="form-control"/>
+            </div>
+
+            <button type="submit" class="btn btn-primary">
+                ${properties.submitButtonText || 'Register Now'}
+            </button>
+        </form>
+
+        <div id="success-message" class="success-message" style="display:none;">
+            <p>${properties.successMessage || 'Thank you for registering! We will contact you soon.'}</p>
+        </div>
+    </div>
+</div>
