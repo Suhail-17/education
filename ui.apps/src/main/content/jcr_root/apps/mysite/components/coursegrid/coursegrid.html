@@ -1,0 +1,10 @@
+<div class="course-grid-container">
+    <h2 class="section-title">${properties.sectionTitle || 'Popular Courses'}</h2>
+    <div class="course-grid">
+        <!-- Static course cards for now, can be made dynamic later -->
+        <div class="course-card-wrapper" data-sly-resource="${'course1' @ resourceType='mysite/components/coursecard'}"></div>
+        <div class="course-card-wrapper" data-sly-resource="${'course2' @ resourceType='mysite/components/coursecard'}"></div>
+        <div class="course-card-wrapper" data-sly-resource="${'course3' @ resourceType='mysite/components/coursecard'}"></div>
+        <div class="course-card-wrapper" data-sly-resource="${'course4' @ resourceType='mysite/components/coursecard'}"></div>
+    </div>
+</div>

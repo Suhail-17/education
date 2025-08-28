@@ -1,2 +1,6 @@
 #base=css
 registrationform.css
+hero-banner.css
+course-grid.css
+edu-footer.css
+edu-header.css
