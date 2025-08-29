@@ -26,6 +26,54 @@
                             sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
                             fieldLabel="Course Description"
                             name="./courseDescription"/>
+                    <courseLevel
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                            fieldLabel="Course Level"
+                            name="./courseLevel">
+                        <items jcr:primaryType="nt:unstructured">
+                            <beginner jcr:primaryType="nt:unstructured"
+                                      text="Beginner"
+                                      value="beginner"/>
+                            <intermediate jcr:primaryType="nt:unstructured"
+                                          text="Intermediate"
+                                          value="intermediate"/>
+                            <advanced jcr:primaryType="nt:unstructured"
+                                      text="Advanced"
+                                      value="advanced"/>
+                        </items>
+                    </courseLevel>
+                    <courseCategory
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                            fieldLabel="Course Category"
+                            name="./courseCategory">
+                        <items jcr:primaryType="nt:unstructured">
+                            <programming jcr:primaryType="nt:unstructured"
+                                         text="Programming"
+                                         value="programming"/>
+                            <web jcr:primaryType="nt:unstructured"
+                                 text="Web Development"
+                                 value="web"/>
+                            <cloud jcr:primaryType="nt:unstructured"
+                                   text="Cloud Computing"
+                                   value="cloud"/>
+                            <data jcr:primaryType="nt:unstructured"
+                                  text="Data Science"
+                                  value="data"/>
+                        </items>
+                    </courseCategory>
+                    <coursePrice
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                            fieldLabel="Course Price"
+                            name="./coursePrice"/>
+                    <courseDuration
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                            fieldLabel="Course Duration"
+                            name="./courseDuration"
+                            placeholder="e.g., 8 weeks"/>
                     <modules
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="granite/ui/components/coral/foundation/form/multifield"

@@ -1,0 +1,39 @@
+<div class="contact-section">
+    <div class="contact-container">
+        <h2>${properties.title || 'Get in Touch'}</h2>
+        <div class="contact-grid">
+            <div class="contact-info">
+                <h3>Contact Information</h3>
+                <div class="info-item">
+                    <strong>Email:</strong> ${properties.contactEmail || 'info@edulearn.com'}
+                </div>
+                <div class="info-item">
+                    <strong>Phone:</strong> ${properties.contactPhone || '+1 (555) 123-4567'}
+                </div>
+                <div class="info-item">
+                    <strong>Address:</strong> ${properties.address || '123 Learning Street, Education City, EC 12345'}
+                </div>
+                <div class="info-item">
+                    <strong>Office Hours:</strong> ${properties.officeHours || 'Monday - Friday, 9AM - 6PM EST'}
+                </div>
+            </div>
+            <div class="contact-form-wrapper">
+                <form id="contact-form" class="contact-form">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" placeholder="Your Name" required class="form-control"/>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" placeholder="Your Email" required class="form-control"/>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="subject" name="subject" placeholder="Subject" required class="form-control"/>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" rows="5" placeholder="Your Message" required class="form-control"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

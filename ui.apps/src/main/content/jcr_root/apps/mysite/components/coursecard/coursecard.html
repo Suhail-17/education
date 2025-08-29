@@ -9,6 +9,17 @@
     <div class="card-content">
         <h3>${courseModel.courseTitle}</h3>
         <p>${courseModel.courseDescription}</p>
+
+        <!-- Add course meta information -->
+        <div class="course-meta" data-sly-test="${properties.courseLevel || properties.courseDuration}">
+            <span data-sly-test="${properties.courseLevel}" class="course-level">${properties.courseLevel}</span>
+            <span data-sly-test="${properties.courseDuration}" class="course-duration">${properties.courseDuration}</span>
+        </div>
+
+        <!-- Add price if exists -->
+        <div class="course-price" data-sly-test="${properties.coursePrice}">
+            <strong>${properties.coursePrice}</strong>
+        </div>
     </div>
 
     <div class="card-modules" data-sly-test="${courseModel.modules}">

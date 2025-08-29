@@ -4,3 +4,6 @@ hero-banner.css
 course-grid.css
 edu-footer.css
 edu-header.css
+about-contact.css
+course-card.css
+course-search.css

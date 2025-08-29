@@ -1,2 +1,3 @@
 #base=js
 registrationform.js
+contact-form.js
